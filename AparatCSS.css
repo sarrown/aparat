@@ -1,0 +1,29 @@
+body {
+  font-family: "Vazirmatn", sans-serif;
+}
+input {
+  font-family: "Vazirmatn", sans-serif;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.inner-box {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.modal {
+  background-color: rgba(0,0,0,0.4); 
+}
+.modal-content {
+  margin: 15% auto; 
+}
+

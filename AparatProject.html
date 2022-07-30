@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aparat project</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="AparatCSS.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="bg-yellow-300 dark:bg-pink-200">
+    <div class="container mx-auto px-10 h-screen">
+      <div class="relative">
+        <div
+          class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5 text-black dark:text-black"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+        </div>
+        <input
+          type="search"
+          id="search"
+          class="block p-4 pl-10 w-full text-sm text-gray-900 bg-amber-100 rounded-lg border border-gray-300 focus:ring-pink-600 focus:border-pink-800 dark:bg-pink-900 dark:border-rose-300 dark:placeholder-stone-300 dark:text-white dark:focus:ring-pink-100 dark:focus:border-pink-300"
+          placeholder="Search here..."
+          required
+        />
+        <button
+          id="btnsearch"
+          onclick="getVideosHandler()"
+          class="text-white absolute right-2.5 bottom-2.5 bg-amber-500 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-400 dark:hover:bg-pink-700 dark:focus:ring-pink-100"
+        >
+          Search
+        </button>
+      </div>
+
+      <div
+        class="show mx-auto h-screen flex flex-wrap justify-around items-center"
+      >
+        <div class="videos-wrapper">
+          <div
+            id="videoPart"
+            class="grid grid-rows-2 grid-flow-col gap-4 dark:text-stone-600"
+            style="
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              flex-wrap: wrap;
+            "
+          ></div>
+        </div>
+      </div>
+
+      <br />
+      <nav aria-label="Page navigation example">
+        <ul class="inline-flex -space-x-px">
+          <li>
+            <a
+              href="#"
+              onclick="prevPageHandler()"
+              class="py-2 px-3 ml-0 leading-tight text-gray-500 bg-amber-100 rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-pink-900 dark:border-rose-300 dark:text-stone-300 dark:hover:bg-pink-600 dark:hover:text-white"
+              >Previous</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="nextPageHandler()"
+              class="py-2 px-3 leading-tight text-gray-500 bg-amber-100 rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-pink-900 dark:border-rose-300 dark:text-stone-300 dark:hover:bg-pink-600 dark:hover:text-white"
+              >Next</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div
+        id="videoModal"
+        class="modal hidden fixed z-10 top-0 left-0 w-full h-full overflow-auto"
+      >
+        <div
+          class="modal-content bg-amber-200 dark:bg-rose-400 h-96 rounded flex justify-between flex-row flex-wrap 
+          relative w-4/5 p-6 border-2 dark:border-pink-900 border-amber-900"
+        >
+          <span
+            class="close dark:text-slate-200 hover:text-black no-underline cursor-pointer
+             focus:text-black no-underline cursor-pointer absolute top-0 right-2.5 text-xl font-bold"
+            id="close"
+            >&times;</span
+          >
+          <iframe id="modalIframe" frameborder="10" allow="autoplay"></iframe>
+          <div>
+            <div>
+              <p
+                id="profileName"
+                class="mt-6 dark:text-slate-200 text-right"
+              ></p>
+              <img alt="" id="profilePic" class="my-3 float-right" />
+            </div>
+            <p id="visit" class="dark:text-slate-200 text-right clear-both">
+              1
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

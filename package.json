@@ -1,0 +1,23 @@
+{
+  "name": "aparat---project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind" : "tailwindcss -i ./src/tailwind.css -o ./css/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimiazohretalab/aparat---project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimiazohretalab/aparat---project/issues"
+  },
+  "homepage": "https://github.com/kimiazohretalab/aparat---project#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}
